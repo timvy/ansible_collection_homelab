@@ -1,0 +1,10 @@
+---
+- name: Firefly Exporter Playbook
+  hosts: lxc-docker3
+  become: false
+  tasks:
+    - name: Run Firefly Importer
+      community.docker.docker_container_exec:
+        container: firefly-importer
+        command: /usr/local/bin/php artisan importer:import /import/config.json
+      register: result
