@@ -8,3 +8,4 @@
         container: firefly-importer
         command: /usr/local/bin/php artisan importer:import /import/config.json
       register: result
+      failed_when: result.stdout_lines is not defined or 'There is already a transaction with external_id' not in result.stdout
