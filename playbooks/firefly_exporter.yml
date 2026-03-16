@@ -2,6 +2,7 @@
 - name: Firefly Exporter Playbook
   hosts: lxc-docker3
   become: false
+  gather_facts: false
   tasks:
     - name: Run Firefly Importer
       community.docker.docker_container_exec:
