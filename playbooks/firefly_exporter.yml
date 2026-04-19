@@ -3,6 +3,7 @@
   hosts: lxc-docker3
   become: false
   gather_facts: false
+  remote_user: ansible
   tasks:
     - name: Run Firefly Importer
       community.docker.docker_container_exec:
